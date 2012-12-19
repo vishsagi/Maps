@@ -50,7 +50,7 @@
     region.center = center;
     region.span = span;
     
-    
+    NSLog(@"changes");
     [mapView setRegion:region animated:YES];
     [self.view addSubview:mapView];
     
