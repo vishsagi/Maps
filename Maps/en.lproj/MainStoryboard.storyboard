@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+    </dependencies>
+    <scenes>
+        <!--Maps View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="MapsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="im0-JS-Jcu">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="My Location">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="location:" destination="2" eventType="touchUpInside" id="Lh9-1g-drx"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XZB-n4-RfB">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="403" id="kjv-Gn-I5o"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XZB-n4-RfB" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="C2v-Xl-o04"/>
+                            <constraint firstItem="XZB-n4-RfB" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="FTa-TH-urk"/>
+                            <constraint firstItem="XZB-n4-RfB" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Qjr-gl-ayM"/>
+                            <constraint firstItem="XZB-n4-RfB" firstAttribute="centerX" secondItem="im0-JS-Jcu" secondAttribute="centerX" type="default" id="ePU-yL-YOw"/>
+                            <constraint firstItem="im0-JS-Jcu" firstAttribute="top" secondItem="XZB-n4-RfB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="r9u-I9-TJJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="XZB-n4-RfB" id="0oq-qa-Lgg"/>
+                        <outlet property="myLocation" destination="im0-JS-Jcu" id="Caz-2M-DLY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="210" y="-3"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="MapsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="location:"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="myLocation" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
